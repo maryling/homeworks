@@ -10,7 +10,7 @@ with open('freq.txt','r', encoding = 'utf-8') as f:
     sum_ipm = 0        
     for line in lines:
         line = line.strip()
-        if line.count(' жен ') == 1:
+        if line.count(' ед жен ') == 1:
             word, features, ipm = line.split(' | ', 2)
             words.append(word)
             ipm = float(ipm)
