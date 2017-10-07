@@ -36,9 +36,11 @@ def main():
     with open ('number of sentences.txt', 'w', encoding='utf-8') as f:
         f.write('\n'.join(array))
     ##Задание 2: обойти все файлы, из каждого достать автора и тематику, записать в строку через ','
+    with open ('author and topic.csv', 'w', encoding='cp1251') as file:
+        file.write('Название файла' + '\t ' + 'Автор' + '\t ' + 'Тематика текста' + '\n')
     for root, dirs, files in os.walk('news'):
         for f in files:           
-            with open ('author and topic.csv', 'a', encoding='utf-8') as file:
+            with open ('author and topic.csv', 'a', encoding='cp1251') as file:
                 file.write(os.path.join(root, f) + '\t' + find_author(readlines_file(os.path.join(root, f))) + '\t' + find_topic(readlines_file(os.path.join(root, f))) + '\n')
 
 
